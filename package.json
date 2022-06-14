@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./src/index.html"
+    "start": "node tailwind.config.js"
   },
   "repository": {
     "type": "git",
