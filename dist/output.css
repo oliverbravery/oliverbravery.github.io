@@ -881,6 +881,10 @@ video {
   width: 1.5rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -903,6 +907,12 @@ video {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .flex-auto {
@@ -1530,6 +1540,14 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
 }
 
 .text-left {
