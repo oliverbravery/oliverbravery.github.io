@@ -1,0 +1,23 @@
+{
+  "name": "oliverbravery.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverbravery/oliverbravery.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliverbravery/oliverbravery.github.io/issues"
+  },
+  "homepage": "https://github.com/oliverbravery/oliverbravery.github.io#readme",
+  "dependencies": {
+    "tailwindcss": "^3.1.2"
+  }
+}
