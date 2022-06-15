@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
+  <script src="script.js"></script>
   <title>Oliver Bravery</title>
 </head>
-<body class="p-4 px-5 bg-gray-900 mx-auto font-light">
+<body class="p-4 px-5 bg-gray-900 mx-auto font-light" onload="MakeProjects()">
 
     <nav class="bg-gray-900 rounded-md shadow-xl">
         <div class="flex justify-between mx-auto">
@@ -53,13 +54,14 @@
     
 
     <div id="projGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
-
         <div class="max-w-md mx-auto bg-gray-900 rounded-xl shadow-xl overflow-hidden md:max-w-2x1 m-4">
             <div class="md:flex">
                 <div class="p-8">
                     <h1 id="projName" class="h-12 text-3xl text-gray-300 font-semibold">Hello, World!</h1>
-                    <div id="projTag" class="uppercase tracking-wide text-sm text-amber-600 font-semibold">Mod</div>
-                        <p id="projDesc" class="mt-2 text-gray-400 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate quia itaque, iste perferendis quasi molestias exercitationem omnis. Accusantium voluptatibus repellendus, itaque delectus sequi quae et, voluptates blanditiis doloremque consectetur qui?</p>
+                    <div id="projTag" class="uppercase tracking-wide text-sm text-amber-600 font-semibold">
+                        Mod
+                    </div>
+                    <p id="projDesc" class="mt-2 text-gray-400 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate quia itaque, iste perferendis quasi molestias exercitationem omnis. Accusantium voluptatibus repellendus, itaque delectus sequi quae et, voluptates blanditiis doloremque consectetur qui?</p>
                     <div class="flex items-center">
                         <button class="mt-5 text-center flex-auto shadow-md max-w-md mx-auto h-8 hover:bg-slate-700
                     active:bg-slate-900 focus:outline-none bg-slate-800 text-white rounded-xl px-3 w-60">View more</button>
