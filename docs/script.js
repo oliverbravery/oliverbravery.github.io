@@ -1,5 +1,23 @@
+
+
+function GetTagColour(tagName) {
+    var c = "gray-600";
+    var x = [
+        {"name":"mod", "colour":"amber-600"},
+        {"name":"gui", "colour":"cyan-600"},
+        {"name":"console", "colour":"rose-600"},
+        {"name":"misc", "colour":"emerald-600"}
+    ];
+    x.forEach(element => {
+        if(element["name"] == tagName) {
+            c = element["colour"];
+        }
+    });
+    return c;
+}
+
 function MakeProjects() {
-    for(let i = 0; i<10; ++i) {
+    for(let i = 0; i<1; ++i) {
         var div = document.createElement('div');
         div.classList = "max-w-md mx-auto bg-gray-900 rounded-xl shadow-xl overflow-hidden md:max-w-2x1 m-4";
         var div2 = document.createElement('div');
@@ -14,9 +32,11 @@ function MakeProjects() {
         h1.innerText = "Hello, World!!!!";
         div3.appendChild(h1);
         var div4 = document.createElement("div");
-        div4.classList = "uppercase tracking-wide text-sm text-amber-600 font-semibold";
+        c = GetTagColour("mod");
+        console.log(c);
+        div4.classList = `uppercase tracking-wide text-sm text-${c} font-semibold`;
         div4.id = "projTag";
-        div4.innerText = "MOD";
+        div4.innerText = "mod";
         div3.appendChild(div4);
         var p = document.createElement("p");
         p.classList = "mt-2 text-gray-400";
