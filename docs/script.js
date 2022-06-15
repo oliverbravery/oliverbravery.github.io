@@ -16,7 +16,24 @@ function GetTagColour(tagName) {
     return c;
 }
 
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); 
+    xmlHttp.send();
+    return xmlHttp.responseText;
+}
+
+// function GetAllValidGits() {
+//     var x = httpGet("https://api.github.com/users/oliverbravery/repos");
+//     var content = JSON.parse(x);
+//     content.forEach(element => {
+//         if(element[])
+//     });
+// }
+
 function MakeProjects() {
+    // GetAllValidGits();
     for(let i = 0; i<1; ++i) {
         var div = document.createElement('div');
         div.classList = "max-w-md mx-auto bg-gray-900 rounded-xl shadow-xl overflow-hidden md:max-w-2x1 m-4";
