@@ -1,14 +1,26 @@
 
 
+function GetJSONFile(url) {
+    var json = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': url,
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })(); 
+    return json;
+}
+
 function GetTagColour(tagName) {
     var c = "gray-600";
-    var x = [
-        {"name":"mod", "colour":"amber-600"},
-        {"name":"gui", "colour":"cyan-600"},
-        {"name":"console", "colour":"rose-600"},
-        {"name":"misc", "colour":"emerald-600"}
-    ];
-    x.forEach(element => {
+    var jsonFile = GetJSONFile("tagColours.json");
+    jsonFile.forEach(element => {
         if(element["name"] == tagName) {
             c = element["colour"];
         }

@@ -1,0 +1,6 @@
+[
+    {"name":"mod", "colour":"amber-600"},
+    {"name":"gui", "colour":"cyan-600"},
+    {"name":"console", "colour":"rose-600"},
+    {"name":"misc", "colour":"emerald-600"}
+]
