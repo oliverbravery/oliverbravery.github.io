@@ -79,6 +79,33 @@ function GetSpecificProject(projectID, projectsJSON) {
     return x;
 }
 
+function StringReplaceSyntax(highSyntax, file, replaceStart, replaceEnd) {
+    var start = file.indexOf(highSyntax);
+    while(start != -1) {
+        var endPoint = false;
+        var c = start;
+        while(!endPoint) {
+            if(file[c] == "}") {
+                endPoint = true;
+                file = file.substring(0,c) + "" + file.substring(c+1);
+                file = file.slice(0, c) + replaceEnd + file.slice(c);
+            }
+            else {
+                c++;
+            }
+        }
+        file = file.replace(highSyntax, replaceStart);
+        start = file.indexOf(highSyntax);
+    }
+    return file;
+}
+
+function ProcessProjectDescription(file) {
+    file = file.replaceAll("\\n","</br></br>");
+    file = StringReplaceSyntax("§ST{", file, `<p class="text-lg text-gray-300">`, "</p>");
+    return file;
+}
+
 function FillProjectPage() {
     var details = GetJSONFile("projects.json");
     var projectName = new URLSearchParams(window.location.search).get("id");
@@ -89,7 +116,6 @@ function FillProjectPage() {
     document.getElementById("Project Brief").innerText = projectInfo["desc"];
     var x = document.getElementById("Project Description");
     var txtFileInfo = $.get(`Projects/${projectName}.txt`, function (data) {
-        x.write(data);
+        document.getElementById("Project Description").innerHTML = ProcessProjectDescription(data);
     });
-    console.log(projectName);
 }
