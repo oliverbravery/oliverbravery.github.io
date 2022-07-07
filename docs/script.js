@@ -116,7 +116,6 @@ function ButtonCreationFromSyntax(file) {
             }
         }
         var content = file.substring(start+5, c);
-        console.log(content);
         var splitArray = content.split(",");
         var url = splitArray[0];
         var text = splitArray[1];
@@ -143,7 +142,6 @@ function FillProjectPage() {
     document.getElementById("Project Title").innerText = projectInfo["title"];
     document.getElementById("Project Tag").innerText = projectInfo["tag"];
     document.getElementById("Project Tag").classList = `uppercase tracking-wide text-sm text-${GetTagColour(projectInfo["tag"])} font-semibold`;
-    document.getElementById("Project Brief").innerText = projectInfo["desc"];
     var x = document.getElementById("Project Description");
     var txtFileInfo = $.get(`Projects/${projectName}.txt`, function (data) {
         document.getElementById("Project Description").innerHTML = ProcessProjectDescription(data);
