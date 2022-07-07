@@ -3,6 +3,6 @@
     {"name":"gui", "colour":"cyan-600"},
     {"name":"console", "colour":"rose-600"},
     {"name":"web", "colour":"emerald-600"},
-    {"name":"misc", "colour":"gray-600"}
-    
+    {"name":"misc", "colour":"gray-600"},
+    {"name":"game", "colour":"yellow-600"}
 ]

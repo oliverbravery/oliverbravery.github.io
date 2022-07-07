@@ -29,7 +29,7 @@ function GetTagColour(tagName) {
 }
 
 function MakeProjects() {
-    var details = GetJSONFile("projects.json");
+    var details = GetJSONFile("projects.json"); 
     details.forEach(e => {
         var div = document.createElement('div');
         div.classList = "max-w-md mx-auto bg-gray-900 rounded-xl shadow-xl overflow-hidden md:max-w-2x1 m-4";
@@ -62,9 +62,32 @@ function MakeProjects() {
         button.classList = "mt-5 text-center flex-auto shadow-md max-w-md mx-auto h-8 hover:bg-slate-700 active:bg-slate-900 focus:outline-none bg-slate-800 text-white rounded-xl px-3 w-60";
         button.innerText = "View more";
         button.onclick = function() {
-            location.href = `${e["loc"]}`;
+            location.href = `projectPage.html?id=${e["projID"]}`;
         };
         div5.appendChild(button);
         document.getElementById("projGrid").appendChild(div);
     });
+}
+
+function CreateNavBar() {
+    document.write('    <nav class="bg-gray-900 rounded-md shadow-xl">');
+    document.write('        <div class="flex justify-between mx-auto">');
+    document.write('            <div class="flex items-center"></div>');
+    document.write('            <div class="flex justify-center">');
+    document.write('                <a class="pt-1 text-slate-50 text-3xl pl-12 ml-1" href="#">[ Oliver Bravery ]</a>');
+    document.write('            </div>');
+    document.write('            <div class="flex justify-center">');
+    document.write('                <a href="https://github.com/oliverbravery">');
+    document.write('                    <img src="media/GitHub-Mark.svg" width="50" alt="github logo">');
+    document.write('                </a>');
+    document.write('            </div>');
+    document.write('        </div>');
+    document.write('    </nav>');
+}
+
+function FillProjectPage() {
+    var details = GetJSONFile("projects.json"); 
+    details.forEach(e => {
+
+     });
 }
