@@ -23,4 +23,4 @@ opening curley bracket until it finds the location of the closing curley bracket
 the end curley bracket contains the closing tag "< /p >". This method can also be used to display images and buttons by specifying in the custom tag either the location of the image 
 or the href location of the button's destination.
 \n
-§BTN{www.google.com,Visit GitHub Repository}
+§BTN{https://github.com/oliverbravery/oliverbravery.github.io,Visit GitHub Repository}

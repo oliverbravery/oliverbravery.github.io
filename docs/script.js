@@ -122,7 +122,7 @@ function ButtonCreationFromSyntax(file) {
         var text = splitArray[1];
         file = file.substring(0,start+5) + "" + file.substring(start+5+url.length+1);
         file = file.replace("§BTN{", `<button class='mt-5 text-center flex-auto shadow-md max-w-md mx-auto h-8 hover:bg-slate-700
-         active:bg-slate-900 focus:outline-none bg-slate-800 text-white rounded-xl px-3 w-60' onclick="location.href='${splitArray[0]}';">`);
+         active:bg-slate-900 focus:outline-none bg-slate-800 text-white rounded-xl px-3 w-60' onclick="window.location.href='${splitArray[0]}';">`);
         start = file.indexOf("§BTN{");
     }
     return file;
