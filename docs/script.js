@@ -69,25 +69,25 @@ function MakeProjects() {
     });
 }
 
-function CreateNavBar() {
-    document.write('    <nav class="bg-gray-900 rounded-md shadow-xl">');
-    document.write('        <div class="flex justify-between mx-auto">');
-    document.write('            <div class="flex items-center"></div>');
-    document.write('            <div class="flex justify-center">');
-    document.write('                <a class="pt-1 text-slate-50 text-3xl pl-12 ml-1" href="#">[ Oliver Bravery ]</a>');
-    document.write('            </div>');
-    document.write('            <div class="flex justify-center">');
-    document.write('                <a href="https://github.com/oliverbravery">');
-    document.write('                    <img src="media/GitHub-Mark.svg" width="50" alt="github logo">');
-    document.write('                </a>');
-    document.write('            </div>');
-    document.write('        </div>');
-    document.write('    </nav>');
+function GetSpecificProject(projectID, projectsJSON) {
+    var x;
+    projectsJSON.forEach(e => {
+        if(e["projID"] == projectID) {
+            x = e;
+        }
+    });
+    return x;
 }
 
 function FillProjectPage() {
-    var details = GetJSONFile("projects.json"); 
-    details.forEach(e => {
-
-     });
+    var details = GetJSONFile("projects.json");
+    var projectName = new URLSearchParams(window.location.search).get("id");
+    var projectInfo = GetSpecificProject(projectName, details);
+    document.getElementById("Project Title").innerText = projectInfo["title"];
+    document.getElementById("Project Brief").innerText = projectInfo["desc"];
+    var x = document.getElementById("Project Description");
+    var txtFileInfo = $.get(`Projects/${projectName}.txt`, function (data) {
+        x.write(data);
+    });
+    console.log(projectName);
 }
