@@ -1,6 +1,6 @@
-This website was created so that I can showcase my past coding projects. Most of the projects on the website will link to a GitHub repository where the source code avaliable to view.
+This website was created so that I can showcase my past coding projects. Most of the projects on the website will link to a GitHub repository where the source code available to view.
 \n
-This project was created using only file editors such as Visual Studio Code and did not use any third party graphical user interfaces. The CSS (cascading style sheets) for the website
+This project was created using only file editors such as Visual Studio Code and did not use any third-party graphical user interfaces. The CSS (cascading style sheets) for the website
  use the tailwindcss framework. 
  This framework allows for high level CSS classes to be used to make the elements look better without having to use convoluted CSS code.
 \n
@@ -16,11 +16,11 @@ from the JSON file using the projectID. Another directory called "Projects" cont
 that automatically populates the project page (FillProjectPage) fetches the ID query parameter from the URL and uses the projectID to find and load the correct text document. 
 \n
 The text document contains the project's description and any other media to be displayed to the user on the project page. All the text in the document is plain text. special tags 
-can be used in the text documents however to style certain parts of the document. For example, if "§ST" followed by curley braces were used in the text document, the text inside of 
-the curley brakets would be given the predefined "subtitle" CSS styling. This is done in the "StringReplaceSyntax" function. The function searches a string (the text document) for any 
-instances of the beginning of the tag (in this case the "§ST" followed by the opening curley bracket). It then increments along the string character by character from the index of the 
-opening curley bracket until it finds the location of the closing curley bracket. The beginning tag used is then replaced with a "< p >" tag containing the CSS for styling the text and 
-the end curley bracket contains the closing tag "< /p >". This method can also be used to display images and buttons by specifying in the custom tag either the location of the image 
+can be used in the text documents however to style certain parts of the document. For example, if "§ST" followed by curly braces were used in the text document, the text inside of 
+the curly brackets would be given the predefined "subtitle" CSS styling. This is done in the "StringReplaceSyntax" function. The function searches a string (the text document) for any 
+instances of the beginning of the tag (in this case the "§ST" followed by the opening curly bracket). It then increments along the string character by character from the index of the 
+opening curly bracket until it finds the location of the closing curly bracket. The beginning tag used is then replaced with a "< p >" tag containing the CSS for styling the text and 
+the end curly bracket contains the closing tag "< /p >". This method can also be used to display images and buttons by specifying in the custom tag either the location of the image 
 or the href location of the button's destination.
 \n
 §BTN{https://github.com/oliverbravery/oliverbravery.github.io,Visit GitHub Repository}
