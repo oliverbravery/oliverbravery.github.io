@@ -84,6 +84,8 @@ function FillProjectPage() {
     var projectName = new URLSearchParams(window.location.search).get("id");
     var projectInfo = GetSpecificProject(projectName, details);
     document.getElementById("Project Title").innerText = projectInfo["title"];
+    document.getElementById("Project Tag").innerText = projectInfo["tag"];
+    document.getElementById("Project Tag").classList = `uppercase tracking-wide text-sm text-${GetTagColour(projectInfo["tag"])} font-semibold`;
     document.getElementById("Project Brief").innerText = projectInfo["desc"];
     var x = document.getElementById("Project Description");
     var txtFileInfo = $.get(`Projects/${projectName}.txt`, function (data) {
