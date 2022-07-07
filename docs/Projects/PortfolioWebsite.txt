@@ -22,3 +22,5 @@ instances of the beginning of the tag (in this case the "§ST" followed by the o
 opening curley bracket until it finds the location of the closing curley bracket. The beginning tag used is then replaced with a "< p >" tag containing the CSS for styling the text and 
 the end curley bracket contains the closing tag "< /p >". This method can also be used to display images and buttons by specifying in the custom tag either the location of the image 
 or the href location of the button's destination.
+\n
+§BTN{www.google.com,Visit GitHub Repository}
