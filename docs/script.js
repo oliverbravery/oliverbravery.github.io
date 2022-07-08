@@ -28,6 +28,12 @@ function GetTagColour(tagName) {
     return c;
 }
 
+function LoadNavbar() {
+    var txtFileInfo = $.get(`nav.txt`, function (data) {
+        document.getElementById("nav-placeholder").innerHTML = data;
+    });
+}
+
 function MakeProjects() {
     var details = GetJSONFile("projects.json"); 
     details.forEach(e => {

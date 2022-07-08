@@ -11,25 +11,10 @@
     crossorigin="anonymous"></script>
   <title>Oliver Bravery</title>
 </head>
-<body class="p-4 px-5 bg-gray-900 mx-auto font-light" onload="MakeProjects()">
+<body class="p-4 px-5 bg-gray-900 mx-auto font-light" onload="MakeProjects(), LoadNavbar()">
 
-    <nav class="bg-gray-900 rounded-md shadow-xl">
-        <div class="flex justify-between mx-auto">
-            <div class="flex items-center"></div>
-            <div class="flex justify-center">
-                <a class="pt-1 text-slate-50 text-3xl pl-12 ml-1" href="#">[ Oliver Bravery ]</a>
-            </div>
-            <div class="flex justify-center">
-                <a href="https://github.com/oliverbravery">
-                    <img src="media/GitHub-Mark.svg" width="50" alt="github logo">
-                </a>
-            </div>
-        </div>
-    </nav>
-    <div id="aboutMe" class="flex justify-between mx-auto pt-1 bg-gray-900 rounded-b-md shadow-xl pb-5 max-w-xs">
-        <p class="text-lg text-gray-300 flex justify-between mx-auto">computer science student</p>
-    </div> 
-
+    <div id="nav-placeholder"></div>
+    
     <form class="items-center break-all relative w-full flex justify-center pt-5 ">   
         <label for="simple-search" class="sr-only">Search</label>
         <div class="relative w-60">
