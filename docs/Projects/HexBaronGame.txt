@@ -34,4 +34,4 @@ the two upgraded pieces are worth five points.
 §IMG{Projects/media/HBGameplay2.PNG,500,500}
 \n
 §BTN{https://u3b.itch.io/hb,play the game}
-§BTN{NULL,Visit GitHub Repository}
+§BTN{https://github.com/oliverbravery/HexBaron,Visit GitHub Repository}
