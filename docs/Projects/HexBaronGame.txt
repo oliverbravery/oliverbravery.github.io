@@ -1,14 +1,37 @@
-Hex Baron was a two-dimensional, single player, commandline game created by AQA in C-Sharp utilising the .NET 5 framework. Using my knowledege of the Unity game engine and 
-online networking I remade the game using the C-Sharp language in Unity to make it a multiplayer, three-dimensional game. The game uses the photon (Pun) networking library 
-for unity to allow the game to be multiplayer. When the game is loaded, the player is asked to either enter a game code or create a new game. Furthermore, each player must 
-also enter a user name so that in game the players can differentiate between each other. 
+Hex Baron was a two-dimensional, single player, command line game created by AQA in C-Sharp utilising the .NET 5 framework. Using my knowledge of the Unity game engine and 
+online networking I remade the game using the C-Sharp language in Unity to make it a multiplayer, three-dimensional game. This game was created in a week by me in year 12 
+(aged 16) when a classmate jokingly exclaimed that it would be funny to see this game in the third-dimension. As I only worked on the game for a week, there are a few bugs 
+such as some user inputs not being registered. The game uses the photon (Pun) networking library for unity to allow the game to be multiplayer. When the game is loaded, the 
+player is asked to either enter a game code or create a new game. Furthermore, each player must also enter a user name so that in game the players can differentiate between 
+each other. The game showcases a wide variety of object orientated skills including encapsulation, polymorphism and inheritance.
 \n
+§ST{Rules}
+The game comprises of a grid of hexagonal tiles. At the start of the game, each player is allocated one baron (the cube with a crown) and one pawn (the blank cube). The player 
+is granted ten wood (represented by the log icon) and ten fuel (represented by the jerry can icon).
+\n
+A player, when it is there turn can click on one of their pieces to view their options:
+\sn
+- A piece can move to any tile adjacent to itself which uses a go and costs one fuel. If the piece is moving from either a peat bog or a forest however that uses two fuels. 
+\sn
+- A pawn piece can be upgraded to either a 'Peat Bog Digger' or a 'Lumber Engineer'. A pawn must be on a peat bog tile to upgrade to a peat bog digger and a pawn must be on a forest 
+tile to upgrade to a lumber engineer. The upgrade costs five wood and locks the piece to that tile so it can no longer move. A lumber engineer can 'chop' a tree which uses a turn 
+but grants one wood. A peat bog digger can 'dig' which also uses one turn but grants one fuel.
+\sn
+- A baron is a player’s master piece, must like the king in chess. It cannot be upgraded however can be used to spawn in a new pawn piece on a tile adjacent to itself (chosen by the 
+player). The uses one move alongside also costing five wood.
+\sn
+- If a piece is adjacent to two or more other pieces then that piece will be removed and points will be granted to the opposition. A baron is worth ten points, pawn one point and 
+the two upgraded pieces are worth five points.
+\n
+§ST{How to play}
+- Each turn, a player is given three moves. When a player uses a move, part of the square avatar (located next to their statistics) is unfilled.
+\sn
+- The game is over when a player has no pieces left or when they can no longer move (run out of fuel). 
+\n
+§ST{Images}
 §IMG{Projects/media/HBGameplay3.PNG,500,500}
 §IMG{Projects/media/HBGameplay1.PNG,500,500}
 §IMG{Projects/media/HBGameplay2.PNG,500,500}
 \n
-§ST{Rules}
-\n
-
-
-\n§BTN{https://u3b.itch.io/hb,play the game}
+§BTN{https://u3b.itch.io/hb,play the game}
+§BTN{NULL,Visit GitHub Repository}
