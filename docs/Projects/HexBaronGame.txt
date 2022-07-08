@@ -1,0 +1,14 @@
+Hex Baron was a two-dimensional, single player, commandline game created by AQA in C-Sharp utilising the .NET 5 framework. Using my knowledege of the Unity game engine and 
+online networking I remade the game using the C-Sharp language in Unity to make it a multiplayer, three-dimensional game. The game uses the photon (Pun) networking library 
+for unity to allow the game to be multiplayer. When the game is loaded, the player is asked to either enter a game code or create a new game. Furthermore, each player must 
+also enter a user name so that in game the players can differentiate between each other. 
+\n
+§IMG{Projects/media/HBGameplay3.PNG,500,500}
+§IMG{Projects/media/HBGameplay1.PNG,500,500}
+§IMG{Projects/media/HBGameplay2.PNG,500,500}
+\n
+§ST{Rules}
+\n
+
+
+\n§BTN{https://u3b.itch.io/hb,play the game}

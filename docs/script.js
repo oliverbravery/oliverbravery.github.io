@@ -79,21 +79,27 @@ function GetSpecificProject(projectID, projectsJSON) {
     return x;
 }
 
+function FindReplaceEnd(highSyntax,file) {
+    var endPoint = false;
+    var c = file.indexOf(highSyntax);
+    while(!endPoint) {
+        if(file[c] == "}") {
+            endPoint = true;
+        }
+        else {
+            c++;
+        }
+    }
+    return c;
+}
+
 function StringReplaceSyntax(highSyntax, file, replaceStart, replaceEnd) {
     var start = file.indexOf(highSyntax);
     while(start != -1) {
-        var endPoint = false;
-        var c = start;
-        while(!endPoint) {
-            if(file[c] == "}") {
-                endPoint = true;
-                file = file.substring(0,c) + "" + file.substring(c+1);
-                file = file.slice(0, c) + replaceEnd + file.slice(c);
-            }
-            else {
-                c++;
-            }
-        }
+        var c = FindReplaceEnd(highSyntax, file);
+        file = file.substring(0,c) + "" + file.substring(c+1);
+        file = file.slice(0, c) + replaceEnd + file.slice(c);
+
         file = file.replace(highSyntax, replaceStart);
         start = file.indexOf(highSyntax);
     }
@@ -103,18 +109,9 @@ function StringReplaceSyntax(highSyntax, file, replaceStart, replaceEnd) {
 function ButtonCreationFromSyntax(file) {
     var start = file.indexOf("§BTN{");
     while(start != -1) {
-        var endPoint = false;
-        var c = start;
-        while(!endPoint) {
-            if(file[c] == "}") {
-                endPoint = true;
-                file = file.substring(0,c) + "" + file.substring(c+1);
-                file = file.slice(0, c) + "</button>" + file.slice(c);
-            }
-            else {
-                c++;
-            }
-        }
+        var c = FindReplaceEnd("§BTN{", file);
+        file = file.substring(0,c) + "" + file.substring(c+1);
+        file = file.slice(0, c) + "</button>" + file.slice(c);
         var content = file.substring(start+5, c);
         var splitArray = content.split(",");
         var url = splitArray[0];
@@ -127,10 +124,26 @@ function ButtonCreationFromSyntax(file) {
     return file;
 }
 
+function ImageCreationFromSyntax(file) {
+    var start = file.indexOf("§IMG{");
+    while(start != -1) {
+        var c = FindReplaceEnd("§IMG{", file);
+        file = file.substring(0,c) + "" + file.substring(c+1);
+        var content = file.substring(start+5, c);
+        var splitArray = content.split(",");
+        var loc = splitArray[0];
+        var leng = splitArray[1];
+        var wid = splitArray[2];
+        file = file.substring(0,start) + `<img class='max-w-full h-auto rounded-lg inline-flex p-4' src="${loc}" length=${leng} width=${wid}>` + file.substring(c);
+        start = file.indexOf("§IMG{");
+    }
+    return file;
+}
+
 function ProcessProjectDescription(file) {
     file = file.replaceAll("\\n","</br></br>");
     file = StringReplaceSyntax("§ST{", file, `<p class="text-lg text-gray-300">`, "</p>");
-    file = StringReplaceSyntax("§IMG{", file, `<img src='`, "' class='max-w-full h-auto rounded-lg' alt='Project Image'>");
+    file = ImageCreationFromSyntax(file);
     file = ButtonCreationFromSyntax(file);
     return file;
 }
