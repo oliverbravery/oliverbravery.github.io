@@ -1,9 +1,9 @@
-Hex Baron was a two-dimensional, single player, command line game created by AQA in C-Sharp utilising the .NET 5 framework. Using my knowledge of the Unity game engine and 
-online networking I remade the game using the C-Sharp language in Unity to make it a multiplayer, three-dimensional game. This game was created in a week by me in year 12 
-(aged 16) when a classmate jokingly exclaimed that it would be funny to see this game in the third-dimension. As I only worked on the game for a week, there are a few bugs 
-such as some user inputs not being registered. The game uses the photon (Pun) networking library for unity to allow the game to be multiplayer. When the game is loaded, the 
-player is asked to either enter a game code or create a new game. Furthermore, each player must also enter a user name so that in game the players can differentiate between 
-each other. The game showcases a wide variety of object orientated skills including encapsulation, polymorphism and inheritance.
+Hex Baron was a two-dimensional, single player, command line game created by §LNK{https://www.aqa.org.uk/,AQA} (my A-Level examining body) in C-Sharp utilising the .NET 5 
+framework. Using my knowledge of the Unity game engine and online networking I remade the game using the C-Sharp language in Unity to make it a multiplayer, three-dimensional 
+game. This game was created in a week by me in year 12 (aged 16) when a classmate jokingly exclaimed that it would be funny to see this game in the third-dimension. As I only 
+worked on the game for a week, there are a few bugs such as some user inputs not being registered. The game uses the photon (Pun) networking library for unity to allow the game 
+to be multiplayer. When the game is loaded, the player is asked to either enter a game code or create a new game. Furthermore, each player must also enter a user name so that 
+in game the players can differentiate between each other. The game showcases a wide variety of object orientated skills including encapsulation, polymorphism and inheritance.
 \n
 §ST{Rules}
 The game comprises of a grid of hexagonal tiles. At the start of the game, each player is allocated one baron (the cube with a crown) and one pawn (the blank cube). The player 

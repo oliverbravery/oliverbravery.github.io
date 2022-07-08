@@ -130,6 +130,21 @@ function ButtonCreationFromSyntax(file) {
     return file;
 }
 
+function LinkCreationFromSyntax(file) {
+    var start = file.indexOf("§LNK{");
+    while(start != -1) {
+        var c = FindReplaceEnd("§LNK{", file);
+        file = file.substring(0,c) + "" + file.substring(c+1);
+        var content = file.substring(start+5, c);
+        var splitArray = content.split(",");
+        var dest = splitArray[0];
+        var text = splitArray[1];
+        file = file.substring(0,start) + `<a class='no-underline hover:underline' href="${dest}">${text}</a>` + file.substring(c);
+        start = file.indexOf("§LNK{");
+    }
+    return file;
+}
+
 function ImageCreationFromSyntax(file) {
     var start = file.indexOf("§IMG{");
     while(start != -1) {
@@ -152,6 +167,7 @@ function ProcessProjectDescription(file) {
     file = StringReplaceSyntax("§ST{", file, `<p class="text-lg text-gray-300">`, "</p>");
     file = ImageCreationFromSyntax(file);
     file = ButtonCreationFromSyntax(file);
+    file = LinkCreationFromSyntax(file);
     return file;
 }
 
