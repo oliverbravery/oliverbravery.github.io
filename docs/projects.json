@@ -1,4 +1,5 @@
 [
     {"projID":"PortfolioWebsite","title":"Portfolio Website", "tag":"web", "desc":"The website that you are currently viewing utilising JavaScript, CSS and HTML.", "loc":"https://github.com/oliverbravery/oliverbravery.github.io"},
-    {"projID":"HexBaronGame","title":"Hex Baron Game", "tag":"game", "desc":"A multiplayer game created using C-Sharp and the Unity game engine.", "loc":"https://u3b.itch.io/hb"}
+    {"projID":"HexBaronGame","title":"Hex Baron Game", "tag":"game", "desc":"A multiplayer game created using C-Sharp and the Unity game engine.", "loc":"https://u3b.itch.io/hb"},
+    {"projID":"VanillaAssistantMod","title":"Vanilla Assistant Minecraft Mod", "tag":"mod", "desc":"A modification for the video game Minecraft.", "loc":"https://github.com/oliverbravery/VanillaAssistantMod"}
 ]
