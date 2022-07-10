@@ -1,0 +1,11 @@
+'Vanilla Assistant' is a Minecraft modification created using the Java programming language. Unlike most video game companies, Mojang allows users to modify the backend code for 
+Minecraft. This sparks a lot of creativity in the community and is one of the reasons i learnt the Java programming language. This project showcases my ability to understand code 
+written by other developers (the game's creators) and modify that code to create something unique. Furthermore, this project shows my ability to be resourceful, researching different 
+projects which solve issues i stumble upon to help come up with an inactive solution.
+\n
+To inject methods into the games code, 'mixins' were used. Mixins allow methods to describe the location for where the code should be injected then, when the code is being compiled, 
+the mixin's code will be integrated into the game's code. Some examples of these in my project would be the 'AutoFishMixin' class which injects code into the 'FishingBobberEntity' 
+class . This means that my code is run whenever the game executes a certain method in the 'FishingBobberEntity' class (which in this case was when a fish goes for the bait, reel in 
+the line).
+\n
+§BTN{https://github.com/oliverbravery/VanillaAssistantMod,Visit GitHub Repository}
