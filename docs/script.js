@@ -46,13 +46,13 @@ function MakeProjects() {
         div3.classList = "p-8";
         div2.appendChild(div3);
         var h1 = document.createElement("h1");
-        h1.classList = "h-12 text-3xl text-gray-300 font-semibold";
+        h1.classList = "text-3xl text-gray-300 font-semibold";
         h1.id = "projName";
         h1.innerText = `${e["title"]}`;
         div3.appendChild(h1);
         var div4 = document.createElement("div");
         c = GetTagColour(`${e["tag"]}`);
-        div4.classList = `uppercase tracking-wide text-sm text-${c} font-semibold`;
+        div4.classList = `uppercase tracking-wide text-sm mt-2 text-${c} font-semibold`;
         div4.id = "projTag";
         div4.innerText = `${e["tag"]}`;
         div3.appendChild(div4);
