@@ -9,7 +9,8 @@ a variety of ways to fetch this token from the Spotify API. I did this with the 
 The API is used to check if the password to access the site is valid alongside also being used to fetch the Spotify access token which is used to access the Spotify API. 
 \n
 When someone wishes to access the website they must enter a password. The password is hashed and sent to the API using a GET request to the /Login endpoint. The password sent is 
-hashed using SHA256 encryption then hashed again with the time the password was sent. When the API receives this password it will fetch the stored correct hashed password and hash it with the current time. If the stored hash matches the parameterized hash then the password is valid. If it does not match however, the stored hashed password will 
+hashed using SHA256 encryption then hashed again with the time the password was sent. When the API receives this password it will fetch the stored correct hashed password and hash 
+it with the current time. If the stored hash matches the parameterized hash then the password is valid. If it does not match however, the stored hashed password will 
 be hashed with a range of times before and after the current time (for example, one minute before the current time and one minute after). This is done in case the parameterized 
 password was sent later than it was hashed meaning, if it was hashed with the time 12:56 and the API received it at 12:57 it would be invalid. This removes the issue of the clocks 
 being out of sync. If the parameterized hash matches the stored hash then the password is valid. The GET request would then return a cookie called "ThePasswordString" which is equal 
