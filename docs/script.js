@@ -165,6 +165,7 @@ function ProcessProjectDescription(file) {
     file = file.replaceAll("\\n","</br></br>");
     file = file.replaceAll("\\sn","</br>");
     file = StringReplaceSyntax("§ST{", file, `<p class="text-lg text-gray-300">`, "</p>");
+    file = StringReplaceSyntax("§I{", file, `<a class="italic">`, "</a>");
     file = ImageCreationFromSyntax(file);
     file = ButtonCreationFromSyntax(file);
     file = LinkCreationFromSyntax(file);

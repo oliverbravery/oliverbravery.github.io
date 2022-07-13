@@ -1,0 +1,38 @@
+Spotify’s public playlists allow for a playlist creator to share their playlist with other Spotify users. Other users can listen to the playlist and add songs however 
+they cannot delete songs from the playlist. This web-application solves this issue by allowing users to view songs in the playlist in their browser and delete songs from the playlist. 
+The API (application programming interface) was created utilising the Flask python framework. The website was created using HTML, CSS and JavaScript.
+\n
+A lot of research went into the creation of this project. The Spotify API documentation, whilist being useful does not contain much information on how to obtain refresh tokens. I had to test 
+a variety of ways to fetch this token from the Spotify API. I did this with the help of the 'Postman' application which is a program that allows for the easy creation of HTTP(S) requests.
+\n
+§ST{API}
+The API is used to check if the password to access the site is valid alongside also being used to fetch the Spotify access token which is used to access the Spotify API. 
+\n
+When someone wishes to access the website they must enter a password. The password is hashed and sent to the API using a GET request to the /Login endpoint. The password sent is 
+hashed using SHA256 encryption then hashed again with the time the password was sent. When the API receives this password it will fetch the stored correct hashed password and hash it with the current time. If the stored hash matches the parameterized hash then the password is valid. If it does not match however, the stored hashed password will 
+be hashed with a range of times before and after the current time (for example, one minute before the current time and one minute after). This is done in case the parameterized 
+password was sent later than it was hashed meaning, if it was hashed with the time 12:56 and the API received it at 12:57 it would be invalid. This removes the issue of the clocks 
+being out of sync. If the parameterized hash matches the stored hash then the password is valid. The GET request would then return a cookie called "ThePasswordString" which is equal 
+to the hashed password. This cookie can then be used to access the website for 30 minutes.
+\n
+The website sends requests to the API using the GET method to request the Spotify access token. When the API receives this request it will first check to see if the cookie 
+"ThePasswordString" is valid. Fetching the stored hashed password and using a for loop, the stored hash will be hashed with a range of times starting from the current time all the way to thirty minutes 
+before the current time (the maximum time the cookie should be valid for). If the cookie is valid, then the GET request will return the Spotify access token. The Spotify access token 
+is fetched by making a request a POST request to the Spotify API.
+\n
+§ST{Website} 
+The website is used to allow users to login to the application and delete songs from the playlist.
+\n
+The website has a login in page which allows the user to enter a password to access the site. When the login button is pressed the password entered is hashed using SHA256 utilising the 
+"sjcl" library. The bits for the hashed password are then hashed again using SHA256 with the current time and sent to the API using a GET request to the /Login endpoint. If the response 
+from the API is not invalid (-1) then the cookie will be set and the user will be redirected the main page (songListPage.html).
+\n 
+The song list page displays all the songs in the playlist. When the page is loaded the '§I{DisplayPlaylistTracks}' function is called. This function communicates with the 
+aforementioned API to check that the cookie is valid. If the cookie is not valid the user will be sent to the login page. If it is valid however then the Spotify access token will 
+be fetched. this will be used to perform a GET request on the Spotify API to fetch all the information on the playlist in question. The returned JSON object will then be iterated 
+through to get all the songs in the playlist. For each song in the playlist a custom list item will be created in the song list page. This list item will have the song name displayed 
+alongside the album art of the song all fetched from the Spotify API. Furthermore, the track number will be appended to the name of the song to make each song easier to search for. A 
+'delete song' button is also added to each song section which, when pressed will execute the 'RemoveItemFromPlaylist' function. As there may be hundreds of songs in any given playlist 
+a search feature was implemented. At the top of the page the user can enter any song titles or track numbers and jump to the song in question.
+\n
+§BTN{https://github.com/oliverbravery/SpotifyPlaylistWebsite,Visit GitHub Repository}
